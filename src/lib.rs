@@ -16,7 +16,7 @@ fn dividend_finder(dividend: i64) -> String {
         if dividend%divisor == 0 {
             multi = dividend/divisor;
             //println!("{} x {} = {}",divisor, multi, dividend)
-            let temp: String = format!("{} x {} = {}\n",divisor, multi, dividend).to_owned();
+            let temp: String = format!("{} x {} = {}<br>",divisor, multi, dividend).to_owned();
             let temp_slice: &str = &temp[..];
             result.push_str(temp_slice);
         }
