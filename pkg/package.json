@@ -1,0 +1,11 @@
+{
+  "name": "Dividend-Finder",
+  "version": "0.1.0",
+  "files": [
+    "Dividend_Finder_bg.wasm",
+    "Dividend_Finder.js",
+    "Dividend_Finder.d.ts"
+  ],
+  "browser": "Dividend_Finder.js",
+  "types": "Dividend_Finder.d.ts"
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+      <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+      <title>Tax-Calc-Web</title>
+    </head>
+
+    <body>
+      <label for="number_input">Number:</label>
+      <input type="text" id="number_input" name="number_input"><br><br>
+      <input type="submit" value="Submit" onclick="javascript:getInput()">
+      <div id='result-panel'>
+        <div id='result'></div>
+      </div>
+
+    <script src='./pkg/Dividend_Finder.js'></script>
+    <script>
+      window.addEventListener('load', async () => {
+        // Load the wasm file
+        await wasm_bindgen('./pkg/Dividend_Finder_bg.wasm');
+        // Once it's loaded the wasm_bindgen object is populated
+        // with the functions defined in our Rust code 
+      });
+      function getInput() {
+          let userInput = document.getElementById('number_input').value;
+          document.getElementById('result').innerHTML = wasm_bindgen.rustInterface(userInput);
+        }
+    </script>
+  </body>
+</html>
